@@ -17,4 +17,26 @@
 
 ----
 
-### 1
+### 1 promise
+
+```js
+var tasks = [];
+var output = function(i){
+  return new Promise(function(resolve){
+   setTimeout(function(){
+      console.log(new Date(), i)
+      resolve(i);
+    },1000)
+  })
+}
+
+for(var i = 0; i < 5; i ++){
+  tasks.push(output(i));
+}
+
+Promise.all(tasks).then(function(i){
+  setTimeout(function(){
+    console.log(new Date(), i)
+  },1000)
+})
+```
