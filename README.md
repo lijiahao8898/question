@@ -17,7 +17,7 @@
 
 ----
 
-### 1 promise
+### 1 下面代码输出的结果是?
 
 ```js
 var tasks = [];
@@ -40,3 +40,22 @@ Promise.all(tasks).then(function(i){
   },1000)
 })
 ```
+
+### 2 下面代码输出的结果是？
+
+```js
+for(var i = 0; i < 5; i++){
+  setTimeout(function(){
+    console.log(new Date(), i)
+  }, 1000 * i)
+}
+
+console.log(new Date(), i)
+```
+
+### 3 前端性能优化？
+
+### 4 前端与后端交互的时候，如何实现数据加密？
+
+### 5 前端与IOS,Android的混合开发中的交互？
+
