@@ -123,4 +123,4 @@ console.log(new Date(), i)
 
 ### 7 游览器缓存机制（强缓存，弱缓存）
 
-### 8 <div abc="1"></div>
+### 8 `<div abc="1"></div>`
