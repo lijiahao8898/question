@@ -4,7 +4,7 @@
 
 ## 2018 
 
-1. 学会使用vue并有实际开发项目（vue + vuex + vue-router + axios）.
+1. 学会使用vue并有实际中大型或者完整开发项目（vue + vuex + vue-router + axios）.
 2. 尽量使用Eslint.
 3. 代码要规范~规范~规范~.
 4. 了解常用的ES6.
@@ -122,5 +122,7 @@ console.log(new Date(), i)
 ```
 
 ### 7 游览器缓存机制（强缓存，弱缓存）
+* Expires
+* Cache-Control
 
 ### 8 `<div abc="1"></div>`
