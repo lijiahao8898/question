@@ -122,7 +122,8 @@ console.log(new Date(), i)
 ```
 
 ### 7 游览器缓存机制（强缓存，弱缓存）
-一个请求的实例：
+
+### 强缓存
 ```
 > General
 Request URL:http://yangdongxi.seller.mockuai.com/bossmanager/wap/domain/get.do
@@ -168,6 +169,41 @@ X-Requested-With:XMLHttpRequest
 | must-revalidation/proxy-revalidation | 如果缓存的内容失效，请求必须发送到服务器/代理以进行重新验证      |
 | max-age=xxx (xxx is numeric) | 缓存的内容将在 xxx 秒后失效, 这个选项只在HTTP 1.1可用, 并如果和Last-Modified一起使用时, 优先级较高 |
 
+如果 `cache-control` 有 `max-age/s-maxage` 则过期时间等于 `date + max-age/s-maxage`。如果没有则用 `expires` 作为过期时间。
+
 #### 过期头 - Expires
+Http1.0 中的标准，表明过期时间，注意此处的时间都是指的是服务器的时间。
+
+譬如：`Expires: Thu, 04 Jan 2018 03:15:58 GMT`。
+
+存在的问题：服务器时间与客户端时间的不一致，就会导致缓存跟期待效果出现偏差。
+
+### 弱缓存（协商缓存）
+```
+HTTP/1.1 200 OK
+Date: Thu, 04 Jan 2018 03:10:58 GMT
+Via: 1.1 varnish
+Cache-Control: max-age=300
+X-Served-By: cache-hnd18736-HND
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1515035459.944267,VS0,VE0
+Access-Control-Allow-Origin: *
+X-Fastly-Request-ID: b3a6b8622c580ab51e31a6dbf42596ce537eef03
+Expires: Thu, 04 Jan 2018 03:15:58 GMT
+Source-Age: 1849727
+Vary: Authorization,Accept-Encoding
+Content-Type: image/jpeg
+Content-Security-Policy: default-src 'none'
+Etag: "5ffdaa4768eefcca6f0e3d16ce6a06c20c354792"
+Last-Modified: Fri, 19 Aug 2016 02:03:35 GMT
+Timing-Allow-Origin: https://github.com
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Xss-Protection: 1; mode=block
+X-GitHub-Request-Id: B5E0:1A39E:8284BE:8ACF77:5A3161C3
+Content-Length: 1195
+Accept-Ranges: bytes
+```
 
 ### 8 `<div abc="1"></div>`
