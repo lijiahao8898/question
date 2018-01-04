@@ -206,4 +206,12 @@ Content-Length: 1195
 Accept-Ranges: bytes
 ```
 
+浏览器会向服务器发送请求，同时如果上一次的缓存中有 `Last-modified` 和 `Etag` 字段，
+浏览器将在 `request header` 中加入 `If-Modified-Since`（对应于 `Last-modified` ）， 和 `If-None-Match`（对应于 `Etag` ）。
+
+* Last-modified: 表明请求的资源上次的修改时间。
+* If-Modified-Since：客户端保留的资源上次的修改时间。
+* Etag：资源的内容标识。（不唯一，通常为文件的md5或者一段hash值，只要保证写入和验证时的方法一致即可）
+* If-None-Match： 客户端保留的资源内容标识。
+
 ### 8 `<div abc="1"></div>`
