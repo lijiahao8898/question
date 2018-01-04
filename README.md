@@ -158,6 +158,7 @@ X-Requested-With:XMLHttpRequest
 #### 缓存控制头 - Cache-Control
 
 表一：
+
 | Cache-directive   | 说明                |
 |:----------------- |:-------------------|
 | public            | 所有内容都将被缓存    |
