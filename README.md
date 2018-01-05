@@ -214,4 +214,17 @@ Accept-Ranges: bytes
 * Etag：资源的内容标识。（不唯一，通常为文件的md5或者一段hash值，只要保证写入和验证时的方法一致即可）
 * If-None-Match： 客户端保留的资源内容标识。
 
-### 8 `<div abc="1"></div>`
+### 8 `<div name="abc" abc="1"></div>`
+```js
+/*
+ * jq
+ */
+ $('[name="abc"]').attr('abc');
+ 
+ /*
+  * js
+  */
+  var a = document.getElementByName('abc');
+  a.getAttribute('abc');
+```
+
