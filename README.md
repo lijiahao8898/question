@@ -216,15 +216,15 @@ Accept-Ranges: bytes
 
 ### 8 `<div name="abc" abc="1"></div>`
 ```js
-/*
- * jq
- */
- $('[name="abc"]').attr('abc');
+// jq
+$('[name="abc"]').attr('abc');
  
- /*
-  * js
-  */
-  var a = document.getElementByName('abc');
-  a.getAttribute('abc');
+// js
+var a = document.getElementByName('abc');
+a.getAttribute('abc');
 ```
+
+### 9 外边距塌陷的解决办法？
+
+### 10 什么是MVVM？
 
