@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试问题</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #example1 {
+        width: 100%;
+        position: relative;
+    }
+
+    #example1 .one {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        left: 0;
+    }
+
+    #example1 .two {
+        background-color: gray;
+        height: 200px;
+        margin-left: 200px;
+        /*margin-right: 200px;*/
+        box-sizing: border-box;
+    }
+
+    #example1 .three {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    #example2{
+        display: flex;
+        margin-top: 200px;
+        justify-content: space-between;
+    }
+
+    #example2 .one{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        flex-shrink: 0;
+    }
+
+    #example2 .two{
+        background-color: gray;
+        width: 100%;
+    }
+
+    #example2 .three{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        flex-shrink: 0;
+    }
+</style>
+<body>
+
+<h2>1. 两个DIV如何一个固定宽度，另外一个自适应</h2>
+
+<h3>使用绝对定位的情况</h3>
+<div id="example1">
+    <div class="one"></div>
+    <div class="two"></div>
+    <!--<div class="three"></div>-->
+</div>
+
+<h3>使用Flex布局的情况</h3>
+<div id="example2">
+    <div class="one"></div>
+    <div class="two"></div>
+    <!--<div class="three"></div>-->
+</div>
+</body>
+</html>
