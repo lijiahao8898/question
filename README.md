@@ -17,7 +17,7 @@
 
 ----
 
-### 1 下面代码输出的结果是?
+### 1 - 下面代码输出的结果是?
 
 ```js
 var tasks = [];
@@ -41,7 +41,7 @@ Promise.all(tasks).then(function(i){
 })
 ```
 
-### 2 下面代码输出的结果是？
+### 2 - 下面代码输出的结果是？
 
 ```js
 for(var i = 0; i < 5; i++){
@@ -53,13 +53,13 @@ for(var i = 0; i < 5; i++){
 console.log(new Date(), i)
 ```
 
-### 3 前端性能优化？
+### 3 - 前端性能优化？
 
-### 4 前端与后端交互的时候，如何实现数据加密？
+### 4 - 前端与后端交互的时候，如何实现数据加密？
 
-### 5 前端与IOS,Android的混合开发中的交互？
+### 5 - 前端与IOS,Android的混合开发中的交互？
 
-### 6 创建原生的ajax请求
+### 6 - 创建原生的ajax请求？
 ```js
  1    ajax({
  2         url: "./TestXHR.aspx",              //请求地址
@@ -121,7 +121,7 @@ console.log(new Date(), i)
 58     }
 ```
 
-### 7 游览器缓存机制（强缓存，弱缓存）
+### 7 - 游览器缓存机制（强缓存，弱缓存）
 
 ### 强缓存
 ```
@@ -214,7 +214,7 @@ Accept-Ranges: bytes
 * Etag：资源的内容标识。（不唯一，通常为文件的md5或者一段hash值，只要保证写入和验证时的方法一致即可）
 * If-None-Match： 客户端保留的资源内容标识。
 
-### 8 `<div name="abc" abc="1"></div>`
+### 8 - `<div name="abc" abc="1"></div>` 如何获取其中的 `abc` 属性？
 ```js
 // jq
 $('[name="abc"]').attr('abc');
@@ -224,14 +224,15 @@ var a = document.getElementByName('abc');
 a.getAttribute('abc');
 ```
 
-### 9 外边距塌陷的解决办法？
+### 9 - 什么是外边距塌陷？如何解决？
 
-### 10 什么是MVVM？
+### 10 - 什么是MVVM，简单解释下？
 
-### 数组去重
+### 11 - 如何实现数组去重？
 
-### 浅复制和深复制
+### 12 - 如何实现浅复制和深复制？
 
+```js
 var cloneObj = function(obj){
     var str, newobj = obj.constructor === Array ? [] : {};
     if(typeof obj !== 'object'){
@@ -247,6 +248,9 @@ var cloneObj = function(obj){
     }
     return newobj;
 };
+```
 
-### 菲波那切数列
+### 13 - 如何实现菲波那切数列？
+
+### 14 - 知道哪些排序的方法？大致的实现思路？
 
