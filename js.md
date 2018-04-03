@@ -44,64 +44,64 @@ console.log(new Date(), i)
 
 ### 6 - 创建原生的ajax请求？
 ```js
- 1    ajax({
- 2         url: "./TestXHR.aspx",              //请求地址
- 3         type: "POST",                       //请求方式
- 4         data: { name: "super", age: 20 },        //请求参数
- 5         dataType: "json",
- 6         success: function (response, xml) {
- 7             // 此处放成功后执行的代码
- 8         },
- 9         fail: function (status) {
-10             // 此处放失败后执行的代码
-11         }
-12     });
-13
-14     function ajax(options) {
-15         options = options || {};
-16         options.type = (options.type || "GET").toUpperCase();
-17         options.dataType = options.dataType || "json";
-18         var params = formatParams(options.data);
-19
-20         //创建 - 非IE6 - 第一步
-21         if (window.XMLHttpRequest) {
-22             var xhr = new XMLHttpRequest();
-23         } else { //IE6及其以下版本浏览器
-24             var xhr = new ActiveXObject('Microsoft.XMLHTTP');
-25         }
-26
-27         //接收 - 第三步
-28         xhr.onreadystatechange = function () {
-29             if (xhr.readyState == 4) {
-30                 var status = xhr.status;
-31                 if (status >= 200 && status < 300) {
-32                     options.success && options.success(xhr.responseText, xhr.responseXML);
-33                 } else {
-34                     options.fail && options.fail(status);
-35                 }
-36             }
-37         }
-38
-39         //连接 和 发送 - 第二步
-40         if (options.type == "GET") {
-41             xhr.open("GET", options.url + "?" + params, true);
-42             xhr.send(null);
-43         } else if (options.type == "POST") {
-44             xhr.open("POST", options.url, true);
-45             //设置表单提交时的内容类型
-46             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-47             xhr.send(params);
-48         }
-49     }
-50     //格式化参数
-51     function formatParams(data) {
-52         var arr = [];
-53         for (var name in data) {
-54             arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
-55         }
-56         arr.push(("v=" + Math.random()).replace("."));
-57         return arr.join("&");
-58     }
+ ajax({
+     url: "./TestXHR.aspx",              //请求地址
+     type: "POST",                       //请求方式
+     data: { name: "super", age: 20 },        //请求参数
+     dataType: "json",
+     success: function (response, xml) {
+         // 此处放成功后执行的代码
+     },
+     fail: function (status) {
+         // 此处放失败后执行的代码
+     }
+ });
+
+ function ajax(options) {
+     options = options || {};
+     options.type = (options.type || "GET").toUpperCase();
+     options.dataType = options.dataType || "json";
+     var params = formatParams(options.data);
+
+     //创建 - 非IE6 - 第一步
+     if (window.XMLHttpRequest) {
+         var xhr = new XMLHttpRequest();
+     } else { //IE6及其以下版本浏览器
+         var xhr = new ActiveXObject('Microsoft.XMLHTTP');
+     }
+
+     //接收 - 第三步
+     xhr.onreadystatechange = function () {
+         if (xhr.readyState == 4) {
+             var status = xhr.status;
+             if (status >= 200 && status < 300) {
+                 options.success && options.success(xhr.responseText, xhr.responseXML);
+             } else {
+                 options.fail && options.fail(status);
+             }
+         }
+     }
+
+     //连接 和 发送 - 第二步
+     if (options.type == "GET") {
+         xhr.open("GET", options.url + "?" + params, true);
+         xhr.send(null);
+     } else if (options.type == "POST") {
+         xhr.open("POST", options.url, true);
+         //设置表单提交时的内容类型
+         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+         xhr.send(params);
+     }
+ }
+ //格式化参数
+ function formatParams(data) {
+     var arr = [];
+     for (var name in data) {
+         arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
+     }
+     arr.push(("v=" + Math.random()).replace("."));
+     return arr.join("&");
+ }
 ```
 
 ### 7 - `<div name="abc" abc="1"></div>` 如何获取其中的 `abc` 属性？

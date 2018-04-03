@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>面试问题</title>
+    <title>面试问题 - CSS</title>
 </head>
 <style>
     * {
         margin: 0;
         padding: 0;
+    }
+
+    .title{
+        text-align: center;
+        font-weight: normal;
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
+    .title-little{
+        margin: 10px;
+        font-weight: normal;
     }
 
     #example1 {
@@ -31,18 +43,8 @@
         box-sizing: border-box;
     }
 
-    #example1 .three {
-        width: 200px;
-        height: 200px;
-        background-color: red;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
     #example2{
         display: flex;
-        margin-top: 200px;
         justify-content: space-between;
     }
 
@@ -64,23 +66,88 @@
         background-color: red;
         flex-shrink: 0;
     }
+
+    #example3 {
+        width: 100%;
+        position: relative;
+    }
+
+    #example3 .one {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        left: 0;
+    }
+
+    #example3 .two {
+        background-color: gray;
+        height: 200px;
+        margin-left: 200px;
+        margin-right: 200px;
+        box-sizing: border-box;
+    }
+
+    #example3 .three {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    #example4{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #example4 .one{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        flex-shrink: 0;
+    }
+
+    #example4 .two{
+        background-color: gray;
+        width: 100%;
+    }
+
+    #example4 .three{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        flex-shrink: 0;
+    }
 </style>
 <body>
 
-<h2>1. 两个DIV如何一个固定宽度，另外一个自适应</h2>
-
-<h3>使用绝对定位的情况</h3>
+<h2 class="title"># 两个DIV如何一个固定宽度，另外一个自适应</h2>
+<h3 class="title-little">使用绝对定位的情况</h3>
 <div id="example1">
     <div class="one"></div>
     <div class="two"></div>
     <!--<div class="three"></div>-->
 </div>
-
-<h3>使用Flex布局的情况</h3>
+<h3 class="title-little">使用Flex布局的情况</h3>
 <div id="example2">
     <div class="one"></div>
     <div class="two"></div>
-    <!--<div class="three"></div>-->
+</div>
+
+<h2 class="title"># 三个DIV如何两边固定宽度，中间自适应</h2>
+<h3 class="title-little">使用绝对定位的情况</h3>
+<div id="example3">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+</div>
+<h3 class="title-little">使用Flex布局的情况</h3>
+<div id="example4">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
 </div>
 </body>
 </html>
